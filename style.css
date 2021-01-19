@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div { 
+    text-align: justify;
+    
+}
+
+body { width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    margin: 0 auto;
+    
+}
+
+#small, #medium, #large {
+    
+    padding: 1rem;
+} 
+/* Color Changing */
+
+@media (max-width: 410px) {
+    body { background-color: red;}
+    div { 
+        display: grid;
+        grid-template-rows: auto;
+        grid-row-gap: 1%;
+        grid-column-gap: 1%;
+        font-size: x-small;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 768px) {
+    body { background-color: green;}
+    main { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+        grid-row-gap: 1%;
+        grid-column-gap: 1%;
+        font-size: normal;
+    }
+    #small { grid-area: 1 / 1 / 2 / 3; }
+    #medium { grid-area: 2 / 1 / 3 / 2; }
+    #large { grid-area: 3 / 1 / 4 / 4; } 
+}
+
+@media (min-width: 769px) {
+    body { background-color: lightblue;}
+    main { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-row-gap: 1%;
+        grid-column-gap: 1%;
+        font-size: x-large;
+    }
+    #small { grid-area: 1 / 1 / 2 / 2; }
+    #medium { grid-area: 1 / 2 / 2 / 3; }
+    #large { grid-area: 1 / 3 / 2 / 4; } 
+}
+
+
+/* Hiding Elements */
+
+
+@media screen and (max-width: 410px)  {
+  body {
+    background-color: red;
+  }
+    #medium {
+        display: none;
+    }
+    #large{
+        display: none;
+    }
+
+    
+
+
+@media screen and (min-width: 410px)  and  (max-width: 768px) {
+  body {
+    background-color: green;
+  }
+    #small{
+        display: none;
+    }
+    
+    #large{
+        display: none;
+    }
+}
+   
+    
+@media screen and (min-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+
+     #small{
+        display: none;
+    }
+    
+    #medium{
+        display: none;
+    }
+}
+    
+/* Font Size */
+    
+@media screen and (max-width: 410px)  {
+  #small {
+    font-size: 5px;
+  }
+}
+
+@media only screen and (min-width: 410px) and  (max-width: 768px) {
+  #medium {
+    font-size: 30px;
+  }
+}
+    
+@media screen and (min-width: 768px) {
+  #large {
+    font-size: 60px;
+  }
+}
+    
+/* Re-Arrange */
